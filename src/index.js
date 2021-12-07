@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import BookContainer from './components/BookContainer';
 
-const element = <h1>Hello from Create React App</h1>;
-
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+      <BookContainer />
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
