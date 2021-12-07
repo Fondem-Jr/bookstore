@@ -9,7 +9,6 @@ The Bookstore is a website that permits:
   
 By building this application, you will learn how to use React and Redux.
 
-![screenshot](./src/components/assets/mathmagicians.jpeg)
 ## Built With 🔨
 
 - React
