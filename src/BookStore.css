@@ -1,28 +1,28 @@
 body {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 
 .bookItem-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .bookProgressContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    display: inline;
-    padding: 1rem;
+  display: inline;
+  padding: 1rem;
 }
 
 .navBar {
-    display: flex;
+  display: flex;
 }
