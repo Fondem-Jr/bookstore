@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputTodo = (props) => (
+const InputTodo = () => (
   <div>
     <h2>ADD NEW BOOK</h2>
     <form>
@@ -14,7 +14,7 @@ const InputTodo = (props) => (
         className="input-Catergory"
         placeholder="Catergory"
       />
-      <button className="input-submit">ADD BOOK</button>
+      <button className="input-submit" type="submit">ADD BOOK</button>
     </form>
   </div>
 );

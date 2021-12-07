@@ -32,7 +32,7 @@ const Navbar = () => {
         </nav>
       </div>
       <div>
-          <p>Profile Pic</p>
+        <p>Profile Pic</p>
       </div>
     </div>
   );

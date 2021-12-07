@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import React from 'react';
 
 const BookItem = (props) => (
@@ -12,11 +13,6 @@ const BookItem = (props) => (
           <button>Button</button>
           <button>Edit</button>
         </div>
-        {/* <ul>
-                <li>Comments</li>
-                <li className="removelist">Remove</li>
-                <li>Edit</li>
-            </ul> */}
       </div>
     </div>
     <div className="bookProgressContainer">

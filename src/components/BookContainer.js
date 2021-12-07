@@ -6,7 +6,7 @@ import Categories from '../pages/Categories';
 import Navbar from './Navbar';
 
 const BookContainer = () => (
-  <React.Fragment>
+  <div>
     <Navbar />
     <Switch>
       <Route exact path="/">
@@ -16,7 +16,7 @@ const BookContainer = () => (
         <Categories />
       </Route>
     </Switch>
-  </React.Fragment>
+  </div>
 );
 
 export default BookContainer;
