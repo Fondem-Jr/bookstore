@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 const InputBook = () => {
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
 
@@ -15,10 +14,10 @@ const InputBook = () => {
     const newBook = {
       id: uuidv4(),
       title,
-      category
-    }
-    dispatch(addBook(newBook))
-  }
+      category,
+    };
+    dispatch(addBook(newBook));
+  };
 
   return (
     <div>
@@ -31,19 +30,19 @@ const InputBook = () => {
           className="input-BookTitle"
           placeholder="Book Title"
           value={title}
-          onChange={e => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
           className="input-Catergory"
           placeholder="Category"
           value={category}
-          onChange={e => setCategory(e.target.value)}
+          onChange={(e) => setCategory(e.target.value)}
         />
         <button className="input-submit" type="submit">ADD BOOK</button>
       </form>
     </div>
   );
-}
+};
 
 export default InputBook;
