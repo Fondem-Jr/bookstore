@@ -1,11 +1,12 @@
 import React from 'react';
 import BookList from '../components/BookList';
-import InputTodo from '../components/InputBook';
+import InputBook from '../components/InputBook';
+import { v4 as uuidv4 } from "uuid";
 
 const Books = () => {
   const books = [
     {
-      id: 1,
+      id: uuidv4(),
       category: 'Action',
       title: 'Ruby',
       author: 'Rails',
@@ -13,7 +14,7 @@ const Books = () => {
       currentChapter: 'Chapter 17',
     },
     {
-      id: 2,
+      id: uuidv4(),
       category: 'Economy',
       title: 'JS',
       author: 'React',
@@ -24,7 +25,7 @@ const Books = () => {
   return (
     <div>
       <BookList books={books} />
-      <InputTodo />
+      <InputBook />
     </div>
   );
 };
