@@ -1,34 +1,30 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
+import { addBook } from '../redux/books/books';
 
 const InputBook = () => {
   const [title, setTitle] = useState("");
-  const [catergory, setcatergory] = useState("");
+  const [category, setCategory] = useState("");
 
-  const books = useSelector(state =>  state);
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const submitBookToStore = (e) => {
     e.preventDefault();
-    
-    if (!title || !catergory) {
-      return <p>Please fill in all spaces</p>
-    }
-    const data = {
+    const newBook = {
       id: uuidv4(),
       title,
-      catergory
+      category
     }
-    dispatch({type: "ADD_BOOK", payload:data})
+    dispatch(addBook(newBook))
   }
-  console.log(books);
+
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={submitBookToStore}
       >
         <input
           type="text"
@@ -40,9 +36,9 @@ const InputBook = () => {
         <input
           type="text"
           className="input-Catergory"
-          placeholder="Catergory"
-          value={catergory}
-          onChange={e => setcatergory(e.target.value)}
+          placeholder="Category"
+          value={category}
+          onChange={e => setCategory(e.target.value)}
         />
         <button className="input-submit" type="submit">ADD BOOK</button>
       </form>

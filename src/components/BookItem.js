@@ -1,21 +1,29 @@
 /* eslint-disable  */
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
-import InputBook from './InputBook';
-
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const BookItem = (props) => {
+    const { book } = props
+    const {
+      title, author, category, progress, currentChapter,
+    } = book;
+    const dispatch = useDispatch();
+
+    const deleteBook = (e) => {
+      e.preventDefault();
+      dispatch(removeBook(title));
+    };
   return (
     <div className="bookItem-container">
       <div className="bookDetail">
-        <div className="bookCategory">{props.book.category}</div>
-        <div className="bookTitle">{props.book.title}</div>
-        <div className="bookAuthor">{props.book.author}</div>
+        <div className="bookCategory">{category}</div>
+        <div className="bookTitle">{title}</div>
+        <div className="bookAuthor">{author}</div>
         <div className="bookModifications">
           <div>
             <button>Comments</button>
-            <button>Button</button>
+            <button type="button" onClick={(e) => deleteBook(e)}>Remove</button>
             <button>Edit</button>
           </div>
         </div>
@@ -24,7 +32,7 @@ const BookItem = (props) => {
         <div className="bookProgress">
           <div className="bookProgressIcon" />
           <div className="bookProgressStatus">
-            {props.book.progress}
+            {progress}
             %
             <p>Completed</p>
           </div>
@@ -32,7 +40,7 @@ const BookItem = (props) => {
         <div className="bookCurrentChapterContainer">
           <div className="bookCurrentChapter">
             <p>CURRENT CHAPTER</p>
-            {props.book.currentChapter}
+            {currentChapter}
           </div>
           <div className="bookUpdateProgress">
             <button>UPDATE PROGRESS</button>
