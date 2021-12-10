@@ -16,23 +16,25 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navBar">
-      <div>
-        <h1>Bookstore CMS</h1>
+    <div className="panel">
+      <div className='navBar'>
+        <div>
+          <span className='Text-Style-5'>Bookstore CMS</span>
+        </div>
+        <div>
+          <nav>
+            <ul>
+              {links.map((link) => (
+                <li key={link.id} className='navList'>
+                  <NavLink to={link.path}>{link.text}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
-      <div>
-        <nav>
-          <ul>
-            {links.map((link) => (
-              <li key={link.id}>
-                <NavLink to={link.path}>{link.text}</NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-      <div>
-        <p>Profile Pic</p>
+      <div className='profileIcon'>
+        <span className='Mask'>Pic</span>
       </div>
     </div>
   );
