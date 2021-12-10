@@ -2,6 +2,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeAsync } from '../redux/books/books';
+import { FaHourglassStart } from "react-icons/fa";
+import { FcDoughnutChart } from "react-icons/fc";
 
 const BookItem = (props) => {
     const { book } = props
@@ -30,7 +32,7 @@ const BookItem = (props) => {
       </div>
       <div className="bookProgressContainer">
         <div className="bookProgress">
-          <div className="bookProgressIcon" />
+          <div className="bookProgressIcon"><FcDoughnutChart style={{color: '#0290ff', fontSize: '70px'}}/></div>
           <div className="bookProgressStatus">
             <span className='percentageProgress'>{progress}64%</span>
            

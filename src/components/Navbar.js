@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const links = [
@@ -34,7 +35,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className='profileIcon'>
-        <span className='Mask'>Pic</span>
+        <span><FaUser style={{color: '#0290ff', fontSize: '50px'}}/></span>
       </div>
     </div>
   );
