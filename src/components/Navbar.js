@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaUser } from "react-icons/fa";
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
   const links = [
@@ -18,15 +18,15 @@ const Navbar = () => {
 
   return (
     <div className="panel">
-      <div className='navBar'>
+      <div className="navBar">
         <div>
-          <span className='Text-Style-5'>Bookstore CMS</span>
+          <span className="Text-Style-5">Bookstore CMS</span>
         </div>
         <div>
           <nav>
             <ul>
               {links.map((link) => (
-                <li key={link.id} className='navList'>
+                <li key={link.id} className="navList">
                   <NavLink to={link.path}>{link.text}</NavLink>
                 </li>
               ))}
@@ -34,8 +34,8 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-      <div className='profileIcon'>
-        <span><FaUser style={{color: '#0290ff', fontSize: '50px'}}/></span>
+      <div className="profileIcon">
+        <span><FaUser style={{ color: '#0290ff', fontSize: '50px' }} /></span>
       </div>
     </div>
   );
