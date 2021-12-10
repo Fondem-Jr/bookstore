@@ -1,18 +1,18 @@
 /* eslint-disable  */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeAsync } from '../redux/books/books';
 
 const BookItem = (props) => {
     const { book } = props
     const {
-      title, author, category, progress, currentChapter,
+      title, author, category, progress, currentChapter, item_id
     } = book;
     const dispatch = useDispatch();
 
     const deleteBook = (e) => {
       e.preventDefault();
-      dispatch(removeBook(title));
+      dispatch(removeAsync(item_id));
     };
   return (
     <div className="bookItem-container">
