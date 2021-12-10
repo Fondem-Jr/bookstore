@@ -1,23 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import BookItem from './BookItem';
 
 const BookList = (props) => {
   const { books } = props;
   return (
-    <ul>
+    <div>
       {books.map((book) => (
         <BookItem
           key={book.id}
           book={book}
         />
       ))}
-    </ul>
+    </div>
   );
-};
-
-BookList.propTypes = {
-  books: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default BookList;
