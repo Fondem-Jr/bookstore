@@ -2,7 +2,7 @@
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const LOAD_BOOKS = 'bookStore/books/LOAD_BOOKS';
-const app_id = 'iRVk75KxTjNsxepoOmxr';
+const appID = 'iRVk75KxTjNsxepoOmxr';
 const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps';
 
 const initialState = [];
@@ -36,22 +36,22 @@ export const loadBooks = (books) => ({
 });
 
 const fetchBooks = async () => {
-  const response = await fetch(`${BASE_URL}/${app_id}/books/`);
+  const response = await fetch(`${BASE_URL}/${appID}/books/`);
   const obj = await response.json();
   const keys = Object.keys(obj);
   const list = [];
   keys.forEach((key) => {
-    list.push({ ...obj[key][0], item_id: key});
+    list.push({ ...obj[key][0], item_id: key });
   });
   return list;
-}
+};
 
 export const loadAsync = () => async (dispatch) => {
   dispatch(loadBooks(await fetchBooks()));
 };
 
 export const addAsync = (book) => (dispatch) => {
-  fetch(`${BASE_URL}/${app_id}/books/`, {
+  fetch(`${BASE_URL}/${appID}/books/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export const addAsync = (book) => (dispatch) => {
 };
 
 export const removeAsync = (id) => (dispatch) => {
-  fetch(`${BASE_URL}/${app_id}/books/${id}`, {
+  fetch(`${BASE_URL}/${appID}/books/${id}`, {
     method: 'DELETE',
   });
   dispatch(removeBook(id));
