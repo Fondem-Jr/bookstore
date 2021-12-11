@@ -20,8 +20,8 @@ const InputBook = () => {
   };
 
   return (
-    <div>
-      <h2>ADD NEW BOOK</h2>
+    <div className="InputContainer">
+      <h2 className="InputHeader">ADD NEW BOOK</h2>
       <form
         onSubmit={submitBookToStore}
       >

@@ -2,6 +2,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeAsync } from '../redux/books/books';
+import { FaHourglassStart } from "react-icons/fa";
+import { FcDoughnutChart } from "react-icons/fc";
 
 const BookItem = (props) => {
     const { book } = props
@@ -22,28 +24,28 @@ const BookItem = (props) => {
         <div className="bookAuthor">{author}</div>
         <div className="bookModifications">
           <div>
-            <button>Comments</button>
-            <button type="button" onClick={(e) => deleteBook(e)}>Remove</button>
-            <button>Edit</button>
+            <span className='Comments'>Comments</span>
+            <span className='Remove' onClick={(e) => deleteBook(e)}>Remove</span>
+            <span className='Edit'>Edit</span>
           </div>
         </div>
       </div>
       <div className="bookProgressContainer">
         <div className="bookProgress">
-          <div className="bookProgressIcon" />
+          <div className="bookProgressIcon"><FcDoughnutChart style={{color: '#0290ff', fontSize: '70px'}}/></div>
           <div className="bookProgressStatus">
-            {progress}
-            %
-            <p>Completed</p>
+            <span className='percentageProgress'>{progress}64%</span>
+           
+            <p className='Completed'>Completed</p>
           </div>
         </div>
         <div className="bookCurrentChapterContainer">
           <div className="bookCurrentChapter">
-            <p>CURRENT CHAPTER</p>
-            {currentChapter}
+            <p className='Current-Chapter'>CURRENT CHAPTER</p>
+            <p className='Current-Lesson'>{currentChapter}Introduction</p>
           </div>
           <div className="bookUpdateProgress">
-            <button>UPDATE PROGRESS</button>
+            <button className='button-2'>UPDATE PROGRESS</button>
           </div>
         </div>
       </div>

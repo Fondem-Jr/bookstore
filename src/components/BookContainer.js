@@ -6,7 +6,7 @@ import Categories from '../pages/Categories';
 import Navbar from './Navbar';
 
 const BookContainer = () => (
-  <div>
+  <div className="Bookstore-CMS">
     <Navbar />
     <Switch>
       <Route exact path="/">
